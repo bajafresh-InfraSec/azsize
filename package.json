@@ -1,0 +1,40 @@
+{
+  "name": "azsize",
+  "version": "0.1.0",
+  "description": "CLI tool to check Azure VM availability across regions",
+  "main": "src/index.js",
+  "bin": {
+    "azsize": "./bin/azsize.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "azure",
+    "vm",
+    "availability",
+    "cli",
+    "devops",
+    "cloud"
+  ],
+  "author": "azsize.com",
+  "license": "MIT",
+  "homepage": "https://www.azsize.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bajafresh-InfraSec/azsize-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bajafresh-InfraSec/azsize-cli/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "axios": "^1.6.2",
+    "chalk": "^4.1.2",
+    "cli-table3": "^0.6.3",
+    "ora": "^5.4.1"
+  }
+}
