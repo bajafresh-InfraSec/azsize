@@ -4,7 +4,7 @@
   "description": "CLI tool to check Azure VM availability across regions",
   "main": "src/index.js",
   "bin": {
-    "azsize": "./bin/azsize.js"
+    "azsize": "bin/azsize.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,10 +22,10 @@
   "homepage": "https://www.azsize.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bajafresh-InfraSec/azsize-cli.git"
+    "url": "https://github.com/bajafresh-InfraSec/azsize.git"
   },
   "bugs": {
-    "url": "https://github.com/bajafresh-InfraSec/azsize-cli/issues"
+    "url": "https://github.com/bajafresh-InfraSec/azsize/issues"
   },
   "engines": {
     "node": ">=14.0.0"

@@ -246,7 +246,7 @@ Make sure you're using the correct VM size name (e.g., `Standard_D4s_v5` not `D4
 ## Contributing
 
 Contributions welcome! Please open an issue or PR at:
-https://github.com/bajafresh-InfraSec/azsize-cli
+https://github.com/bajafresh-InfraSec/azsize
 
 ## License
 
@@ -255,9 +255,9 @@ MIT License - see LICENSE file for details
 ## Links
 
 - **Website**: https://www.azsize.com
-- **GitHub**: https://github.com/bajafresh-InfraSec/azsize-cli
+- **GitHub**: https://github.com/bajafresh-InfraSec/azsize
 - **NPM**: https://www.npmjs.com/package/azsize
-- **Issues**: https://github.com/bajafresh-InfraSec/azsize-cli/issues
+- **Issues**: https://github.com/bajafresh-InfraSec/azsize/issues
 
 ## Support
 
