@@ -3,6 +3,7 @@
 Check Azure VM availability across all 49 regions from your command line. Perfect for DevOps workflows, CI/CD pipelines, and automation scripts.
 
 **Web Version:** [www.azsize.com](https://www.azsize.com)
+**Integration Guide:** [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md) - Learn how to use azsize in your workflows
 
 ![npm version](https://img.shields.io/npm/v/azsize) ![license](https://img.shields.io/npm/l/azsize)
 
