@@ -65,6 +65,31 @@ azsize check Standard_E8s_v5 --region westus2 --json
 azsize check Standard_F16s_v2 --region centralus --csv
 ```
 
+### `find` - Find Available Regions (NEW in v0.1.1)
+
+Find all regions where a VM size is available. Searches all 49 regions and shows results sorted by price.
+
+```bash
+azsize find <vmSize> [options]
+```
+
+**Options:**
+- `-l, --limit <number>` - Limit number of results shown
+- `-j, --json` - Output as JSON
+- `-c, --csv` - Output as CSV
+
+**Examples:**
+```bash
+# Find all regions where VM is available
+azsize find Standard_D2s_v3
+
+# Show only top 5 cheapest regions
+azsize find Standard_D2s_v3 --limit 5
+
+# Output as JSON
+azsize find Standard_E8s_v5 --json
+```
+
 ### `compare` - Compare Across Regions
 
 Compare VM availability across multiple regions.

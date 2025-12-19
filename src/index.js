@@ -2,11 +2,12 @@ const { program } = require('commander');
 const checkCommand = require('./commands/check');
 const compareCommand = require('./commands/compare');
 const listCommand = require('./commands/list');
+const findCommand = require('./commands/find');
 
 program
   .name('azsize')
   .description('Check Azure VM availability across regions')
-  .version('0.1.0');
+  .version('0.1.1');
 
 // Check command
 program
@@ -31,5 +32,14 @@ program
   .command('list <type>')
   .description('List available regions or VM series (use: regions or series)')
   .action(listCommand);
+
+// Find command
+program
+  .command('find <vmSize>')
+  .description('Find all regions where a VM size is available (searches all 49 regions)')
+  .option('-j, --json', 'Output as JSON')
+  .option('-c, --csv', 'Output as CSV')
+  .option('-l, --limit <number>', 'Limit number of results shown', parseInt)
+  .action(findCommand);
 
 program.parse(process.argv);
