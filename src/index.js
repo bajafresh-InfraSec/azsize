@@ -3,11 +3,12 @@ const checkCommand = require('./commands/check');
 const compareCommand = require('./commands/compare');
 const listCommand = require('./commands/list');
 const findCommand = require('./commands/find');
+const authCommand = require('./commands/auth');
 
 program
   .name('azsize')
   .description('Check Azure VM availability across regions')
-  .version('0.1.1');
+  .version('0.1.2');
 
 // Check command
 program
@@ -41,5 +42,11 @@ program
   .option('-c, --csv', 'Output as CSV')
   .option('-l, --limit <number>', 'Limit number of results shown', parseInt)
   .action(findCommand);
+
+// Auth command
+program
+  .command('auth [action]')
+  .description('Manage API key authentication (run without args to see status)')
+  .action(authCommand);
 
 program.parse(process.argv);

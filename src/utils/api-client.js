@@ -1,6 +1,21 @@
 const axios = require('axios');
+const { getApiKey } = require('./config');
 
 const API_BASE_URL = 'https://www.azsize.com/api';
+
+/**
+ * Get headers with API key if configured
+ * @returns {Object} - Headers object
+ */
+function getHeaders() {
+  const apiKey = getApiKey();
+  if (apiKey) {
+    return {
+      'X-API-Key': apiKey
+    };
+  }
+  return {};
+}
 
 /**
  * Check VM availability in a specific region
@@ -11,10 +26,14 @@ const API_BASE_URL = 'https://www.azsize.com/api';
 async function checkAvailability(region, seriesFilter = 'Standard_D') {
   try {
     const response = await axios.get(`${API_BASE_URL}/GetVMAvailability`, {
-      params: { region, seriesFilter }
+      params: { region, seriesFilter },
+      headers: getHeaders()
     });
     return response.data;
   } catch (error) {
+    if (error.response?.status === 429) {
+      throw new Error('Rate limit exceeded. Please authenticate with an API key to get more checks. Run: azsize auth');
+    }
     throw new Error(`Failed to fetch availability: ${error.message}`);
   }
 }
@@ -29,7 +48,8 @@ async function checkAvailability(region, seriesFilter = 'Standard_D') {
 async function getHistoricalData(vmSize, region, days = 7) {
   try {
     const response = await axios.get(`${API_BASE_URL}/GetHistoricalData`, {
-      params: { vmSize, region, days, type: 'percentage' }
+      params: { vmSize, region, days, type: 'percentage' },
+      headers: getHeaders()
     });
     return response.data;
   } catch (error) {
